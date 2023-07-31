@@ -16,4 +16,20 @@ CHIP RAM16K {
 
     PARTS:
     // Put your code here:
+    /*select a particular register from the RAM16k memory, we
+    use a 14-bit address, say tt(wwwxxxyyyzzz). 
+    - The tt [0..1] bits can be used to select one of the four RAM4K chips (00 to 11)
+    - the wwwxxxyyyzzz [2..14] bits can be used to select one of the registers within 
+        the selected RAM4K (address size 12)
+    */
+
+
+    DMux4Way(in=load, sel=address[0..1], a=a, b=b, c=c, d=d);
+
+    RAM4K(in=in, load=a, address=address[2..13], out=outa);
+    RAM4K(in=in, load=b, address=address[2..13], out=outb);
+    RAM4K(in=in, load=c, address=address[2..13], out=outc);
+    RAM4K(in=in, load=d, address=address[2..13], out=outd);
+
+    Mux4Way16(a=outa, b=outb, c=outc, d=outd, sel=address[0..1], out=out);
 }
