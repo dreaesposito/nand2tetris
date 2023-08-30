@@ -56,6 +56,26 @@ Gradually build a 16kRAM unit using lower level RAM parts.
 - PC (Program Counter)
 </details>
 
+### Project 4 - Machine Language Intro
+Get an introduction to low-level programming and machine language. Implement two programs using the Hack assembly language.
+ <details>
+  <summary>Programs</summary>
+
+- Fill
+- Mult
+</details>
+
+### Project 5 - Hack Computer Architecture
+Build the Hack hardware platform (Computer) by combining the previously implemented chips. The platform will be capable of executing programs
+written in the Hack machine language.
+ <details>
+  <summary>Chip Set</summary>
+
+- Memory
+- CPU
+- Computer
+</details>
+
 
 
 -----------------------------------------
